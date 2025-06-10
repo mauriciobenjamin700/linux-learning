@@ -288,6 +288,18 @@ kill 1234                    # Envia o sinal de terminação para o processo com
 kill -9 1234                 # Força a terminação do processo com PID 1234
 ```
 
+## Para gerar uma chave de API simples (por exemplo, uma string aleatória segura) no terminal Linux, você pode usar o comando abaixo:
+
+```bash
+openssl rand -hex 32
+```
+
+```bash
+openssl rand -base64 32
+```
+
+Esses comandos vão gerar uma string segura que você pode usar como chave de API.
+
 ---
 
 Este guia cobre alguns dos comandos mais comuns e úteis no Linux. Aprender esses comandos básicos ajudará a navegar e manipular o sistema de arquivos e processos do Linux de forma eficiente.
