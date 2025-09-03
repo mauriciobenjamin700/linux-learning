@@ -303,3 +303,7 @@ Esses comandos vão gerar uma string segura que você pode usar como chave de AP
 ---
 
 Este guia cobre alguns dos comandos mais comuns e úteis no Linux. Aprender esses comandos básicos ajudará a navegar e manipular o sistema de arquivos e processos do Linux de forma eficiente.
+
+## Permissão de Modificar uma Pasta Privada
+
+sudo chmod -R 777 /GLOBAL_PATH_FOR_YOUR_FOLDER
