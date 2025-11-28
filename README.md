@@ -288,6 +288,20 @@ kill 1234                    # Envia o sinal de terminação para o processo com
 kill -9 1234                 # Força a terminação do processo com PID 1234
 ```
 
+## olhando arquivos
+
+Contando quantidade de linhas de um arquivo, neste caso o `app.log`
+
+```bash
+wc -l app.log
+```
+
+Calculando o peso de um arquivo em KB
+
+```
+du -k <filename>
+```
+
 ## Para gerar uma chave de API simples (por exemplo, uma string aleatória segura) no terminal Linux, você pode usar o comando abaixo:
 
 ```bash
