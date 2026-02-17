@@ -326,3 +326,18 @@ sudo chmod -R 777 /GLOBAL_PATH_FOR_YOUR_FOLDER
 
 scp -r USUARIO_DA_SUA_MAQUINA_VPS@IP_DA_SUA_MAQUINA:/CAMINHO_PARA_A_PASTA_QUE_QUER_BAIXAR ~/Downloads/
 
+## Contando Items
+
+### Usando `ls` e `wc`
+```bash
+ls -1 | wc -l
+```
+- `ls -1` lista os arquivos e pastas, um por linha.  
+- `wc -l` conta o número de linhas, ou seja, quantos itens existem.
+
+### Contando apenas arquivos (excluindo diretórios)
+```bash
+find . -maxdepth 1 -type f | wc -l
+```
+- `find . -maxdepth 1 -type f` procura apenas arquivos na pasta atual (sem entrar em subpastas).  
+- `wc -l` faz a contagem.
