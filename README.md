@@ -341,3 +341,45 @@ find . -maxdepth 1 -type f | wc -l
 ```
 - `find . -maxdepth 1 -type f` procura apenas arquivos na pasta atual (sem entrar em subpastas).  
 - `wc -l` faz a contagem.
+
+## 🧹 Limpeza de pacotes e cache do apt
+
+```bash
+sudo apt-get clean
+sudo apt-get autoclean
+sudo apt-get autoremove -y
+```
+
+- `clean`: remove todos os pacotes baixados (.deb) do cache.
+- `autoclean`: remove apenas pacotes antigos e obsoletos.
+- `autoremove`: desinstala dependências que não são mais necessárias.
+
+### 🗑️ Remover arquivos temporários
+
+```bash
+sudo rm -rf /tmp/*
+```
+
+Isso limpa o diretório temporário.  
+⚠️ Atenção: só use `rm -rf` se tiver certeza, pois ele apaga sem pedir confirmação.
+
+### 📦 Limpeza de cache do usuário
+
+```bash
+rm -rf ~/.cache/*
+```
+
+Remove caches de aplicativos do seu usuário.
+
+### 🔍 Opcional: usar ferramentas de limpeza
+
+Você pode instalar o **BleachBit** (interface gráfica) ou usar o **deborphan** para encontrar pacotes órfãos:
+
+```bash
+sudo apt-get install deborphan
+sudo deborphan | xargs sudo apt-get -y remove --purge
+```
+
+---
+
+👉 Dica: como o WSL não roda serviços de sistema como um Linux completo, geralmente não acumula tantos arquivos temporários quanto uma instalação tradicional. A limpeza básica com `apt-get clean` e `rm -rf ~/.cache/*` já resolve na maioria dos casos.
