@@ -322,13 +322,23 @@ Este guia cobre alguns dos comandos mais comuns e úteis no Linux. Aprender esse
 
 sudo chmod -R 777 /GLOBAL_PATH_FOR_YOUR_FOLDER
 
-## Copiando Arquivos da Sua Maquina Para VPS  Via SSH
+## Copiando Arquivos da Máquina Local para a VPS via SSH
 
-scp -r USUARIO_DA_SUA_MAQUINA_VPS@IP_DA_SUA_MAQUINA:/CAMINHO_PARA_A_PASTA_QUE_QUER_BAIXAR ~/Downloads/
+### Com chave .pem (AWS, etc.)
+scp -i ~/.ssh/sua-chave.pem ~/caminho/do/arquivo ubuntu@IP_DA_VPS:/caminho/destino/
 
-## Copiando Arquivos da Sua Maquina VPS para a Local  Via SSH
+### Com chave já registrada no servidor (~/.ssh/authorized_keys)
+scp ~/caminho/do/arquivo ubuntu@IP_DA_VPS:/caminho/destino/
 
-scp -r USUARIO_VPS@IP_VPS:/CAMINHO_NA_VPS ~/Downloads/
+### Copiando Arquivos da VPS para a Máquina Local via SSH
+
+### Com chave .pem (AWS, etc.)
+scp -i ~/.ssh/sua-chave.pem ubuntu@IP_DA_VPS:/caminho/do/arquivo ~/Downloads/
+
+### Com chave já registrada no servidor (~/.ssh/authorized_keys)
+scp ubuntu@IP_DA_VPS:/caminho/do/arquivo ~/Downloads/
+
+> O `-r` só é necessário para copiar pastas inteiras.
 
 ## Contando Items
 
