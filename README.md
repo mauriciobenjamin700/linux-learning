@@ -326,6 +326,10 @@ sudo chmod -R 777 /GLOBAL_PATH_FOR_YOUR_FOLDER
 
 scp -r USUARIO_DA_SUA_MAQUINA_VPS@IP_DA_SUA_MAQUINA:/CAMINHO_PARA_A_PASTA_QUE_QUER_BAIXAR ~/Downloads/
 
+## Copiando Arquivos da Sua Maquina VPS para a Local  Via SSH
+
+scp -r USUARIO_VPS@IP_VPS:/CAMINHO_NA_VPS ~/Downloads/
+
 ## Contando Items
 
 ### Usando `ls` e `wc`
